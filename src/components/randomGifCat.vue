@@ -11,35 +11,33 @@
                 <form class="d-inline-flex flex-column">
                 <div class="form-group d-inline-flex">
                     <label for="exampleFormControlInput1">Título:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escribe un título" v-model="title" ref="title">
+                    <input type="text" class="form-control ml-2" id="exampleFormControlInput1" placeholder="Escribe un título" v-model="title" ref="title">
                 </div>
                 <div class="form-group d-inline-flex">
                     <label for="inputState">Filtro:</label>
-                    <select class="form-control" id="inputState" @change="changeFilter($event)">
+                    <select class="form-control ml-2" id="inputState" @change="changeFilter($event)">
                     <option v-for="opt in filters" :key="opt" :value="opt" v-text="opt"></option>
                     </select>
                 </div>
                 <div class="form-group d-inline-flex">
                     <label for="inputState">Color:</label>
-                    <select class="form-control" id="inputState" @change="changeColor($event)">
+                    <select class="form-control ml-2" id="inputState" @change="changeColor($event)">
                      <option v-for="color in colors" :key="color.color" :value="color.value" v-text="color.color"></option>
                     </select>
                     <span :style="style" id="circle"></span>
                 </div>
                 <div class="form-group d-inline-flex">
                     <label for="exampleFormControlInput1">Tamaño:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingresa el tamaño de texto" v-model="size" ref="size">
+                    <input type="text" class="form-control ml-2" id="exampleFormControlInput1" placeholder="Ingresa el tamaño de texto" v-model="size" ref="size">
                 </div>
                 
                 </form>
             </div>
         </div>
         <div class="row lightblue pt-2 pb-5 d-flex flex-column">
-            <div class="col-sm-6 col-md-6 col-lg-6 mx-auto d-flex justify-content-center">
-            <button @click="getRandomCat" type="button" class="btn btn-light">Obtener mi gatito</button>
-            <div class="text-center mb-5">
-                    <img :src="url">
-            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 mx-auto d-flex flex-column justify-content-center">
+            <button @click="getRandomCat" type="button" class="btn btn-light mx-auto">Obtener mi gatito</button>
+            <img class="my-3" :src="url">
             </div>
         </div>
     </div>
@@ -70,8 +68,8 @@
             selected:"",
             url:"",
             colors:[
-                {color:"rojo",value:"red"},
-                {color:"azul",value:"blue"},
+                {color:"rojo", value:"red"},
+                {color:"azul", value:"blue"},
                 {color:"verde", value:"green"},
                 {color:"blanco", value:"white" },
                 {color:"amarillo",value:"yellow"},
@@ -130,14 +128,17 @@
 </script>
 
 <style scoped>
+    body{
+        background-color: lightblue !important;
+        }
+    
   #app {
   /*  font-size: 25px;
     font-family: "Calibri", sans-serif;
     color: darkblue;
     background: lightblue;
     */
-    height: 100vh;
-    width: 100%;
+    color: #2d2d2d;
   }
   .lightblue{
       background-color: lightblue;
@@ -151,5 +152,12 @@
         height: 40px;
         display:inline-block;
         border-radius:50%;
+        margin-left: 20px;
+    }
+    button{
+        width: fit-content;
+    }
+    select{
+        width: max-content;
     }
 </style>
