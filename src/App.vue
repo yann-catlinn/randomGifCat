@@ -1,24 +1,21 @@
 <template>
   <div id="app">
-    {{ message }}
+    <random-gif-cat></random-gif-cat>
   </div>
 </template>
 
 <script>
+import randomGifCat from './components/randomGifCat.vue'
   export default {
     data() {
-      return {
-        message: 'Hola en vue',
-      };
+      return {};
+    },
+    components: {
+        'random-gif-cat':randomGifCat,
     }
   }
 </script>
 
 <style scoped>
-  #app {
-    font-size: 25px;
-    font-family: "Calibri", sans-serif;
-    color: darkblue;
-    background: lightblue;
-  }
+
 </style>
